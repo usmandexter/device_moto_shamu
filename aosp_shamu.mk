@@ -23,6 +23,14 @@ PRODUCT_COPY_FILES := device/moto/shamu/apns-full-conf.xml:system/etc/apns-conf.
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
+# Inherit some common PixelExperience stuff.
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1440
+TARGET_BOOT_ANIMATION_HALF_RES := true
+TARGET_BOOT_ANIMATION_RES := 1440
+TARGET_GAPPS_ARCH := arm
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+
 PRODUCT_NAME := aosp_shamu
 PRODUCT_DEVICE := shamu
 PRODUCT_BRAND := Android
